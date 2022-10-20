@@ -1,6 +1,7 @@
 
 import {Entity,PrimaryGeneratedColumn,Column,ManyToOne } from "typeorm";
 import { Categoria } from "src/categorias/entities/categoria.entity";
+import { Usuario } from "src/usuario/entities/usuario.entity";
 
 
 @Entity("tb_produtos")
@@ -19,6 +20,11 @@ descricao:string;
 @ManyToOne(() => Categoria ,(categoria)=> categoria.produto, { onDelete : "CASCADE"} )
   
 categoria:Categoria
+
+@ManyToOne(() => Produto,(produto)=> produto.usuario, { onDelete : "CASCADE"} )
+
+    
+usuario:Usuario
 
 }
 

@@ -1,24 +1,23 @@
+import {Entity,PrimaryGeneratedColumn,Column,OneToMany } from "typeorm";
+import { Produto } from "src/produtos/entities/produto.entity";
 
-import {Entity,PrimaryGeneratedColumn,Column,ManyToOne } from "typeorm";
-import {Usuario} from "src/usuarios/entities/usuario.entity";
+@Entity({name:"tb_usuario"})
+export class Usuario {
 
-
-@Entity("tb_produtos")
-export class Produto {
 @PrimaryGeneratedColumn()
-id_pdt:number;
+id_user:number;
 @Column({length:100})
 nome:string;
-@Column({type : "decimal", precision : 4 , scale : 1 })
-preco:number;
-@Column({type : "decimal", precision : 5 , scale : 1 })
-peso:number;
 @Column({length:100})
-descricao:string;
+usuario:number;
+@Column({length:100 })
+email:number;
+@Column({length:100})
+senha:string;
 
-@ManyToOne(() => Categoria ,(categoria)=> categoria.produto, { onDelete : "CASCADE"} )
-  
-categoria:Categoria
+@OneToMany(() => Produto,(produto) => usuario.produto, { onDelete : "CASCADE"} )
+produto:Produto
+
 
 }
 

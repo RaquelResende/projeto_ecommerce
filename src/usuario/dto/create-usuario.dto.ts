@@ -1,5 +1,5 @@
 
-import { IsNumber, IsString,} from "class-validator";
+import { IsNumber, IsString} from "class-validator";
 
 export class CreateUsuarioDto {
 
@@ -15,7 +15,6 @@ export class CreateUsuarioDto {
     senha:string;
     @IsString()
     foto:string;
-    
 
 
 }

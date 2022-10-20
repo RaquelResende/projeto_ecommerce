@@ -16,7 +16,7 @@ export const databaseProviders = [
         entities: [
            Categoria,Produto
         ],
-        synchronize: false,
+        synchronize: true,
       });
 
       return dataSource.initialize();
