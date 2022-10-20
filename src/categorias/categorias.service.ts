@@ -31,7 +31,7 @@ export class CategoriasService {
     if(!categoria) {
 
       throw new HttpException('Categoria não encontrado!', HttpStatus.NOT_FOUND);
-
+  
     }
 
     return categoria; 

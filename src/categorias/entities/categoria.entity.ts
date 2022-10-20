@@ -1,4 +1,5 @@
-import {Entity,PrimaryGeneratedColumn,Column } from "typeorm";
+import { Produto } from "src/produtos/entities/produto.entity";
+import {Entity,PrimaryGeneratedColumn,Column,OneToMany } from "typeorm";
 
 @Entity(({name:"tb_categorias"}))
 export class Categoria {
@@ -9,7 +10,10 @@ export class Categoria {
     @Column({length:100})
     moveis:string;
 
+    @OneToMany(() => Produto ,(produto)=> produto.categoria, { onDelete : "CASCADE"} )
 
+    
+   produto:Produto
 
 
 }
