@@ -1,5 +1,6 @@
 import { Categoria } from 'src/categorias/entities/categoria.entity';
 import { Produto } from 'src/produtos/entities/produto.entity';
+import { Usuario } from 'src/usuario/entities/usuario.entity';
 import { DataSource } from 'typeorm';
 
 export const databaseProviders = [
@@ -14,9 +15,9 @@ export const databaseProviders = [
         password: 'root',
         database: 'ecommerce',
         entities: [
-           Categoria,Produto
+          __dirname + '/../**/*.entity{.ts,.js}',
         ],
-        synchronize: true,
+        synchronize: false, 
       });
 
       return dataSource.initialize();

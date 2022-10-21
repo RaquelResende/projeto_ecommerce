@@ -21,7 +21,7 @@ descricao:string;
   
 categoria:Categoria
 
-@ManyToOne(() => Produto,(produto)=> produto.usuario, { onDelete : "CASCADE"} )
+@ManyToOne(() => Usuario,(usuario)=> usuario.produto, { onDelete : "CASCADE"} )
 
     
 usuario:Usuario

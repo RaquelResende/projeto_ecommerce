@@ -9,15 +9,15 @@ id_user:number;
 @Column({length:100})
 nome:string;
 @Column({length:100})
-usuario:number;
+usuario:string;
 @Column({length:100 })
-email:number;
+email:string;
 @Column({length:100})
 senha:string;
 
-@OneToMany(() => Produto,(produto) => usuario.produto, { onDelete : "CASCADE"} )
+@OneToMany(() => Produto,(produto) => produto.usuario, { onDelete : "CASCADE"} )
 produto:Produto
-
+ 
 
 }
 
